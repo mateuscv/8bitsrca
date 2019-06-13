@@ -1,9 +1,7 @@
 32nm_HP.pm
-bsim4v5.out
-ngspice.exe
-ngspice_con.exe
-priodeco.txt
-teste.txt
-vcomp140.dll
+*.out
+*.txt
+*.exe
 *.plt
 *.data
+*.dll
