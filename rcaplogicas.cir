@@ -14,21 +14,22 @@ M2 out	in	ground	ground	nmos l=32n w=64n
 .SUBCKT XOR2 in1 in2 out supply ground
 Xinv1 in1 in1_n supply ground INV
 Xinv2 in2 in2_n supply ground INV
-MP1 nodo1	in1_n supply	supply	pmos l=32n w=256n
-MP2 out		in2 	nodo1		supply	pmos l=32n w=256n
+MP1 nodo1	in1_n 	supply	supply	pmos l=32n w=256n
+MP2 out		in2 	nodo1	supply	pmos l=32n w=256n
 MP3 nodo2	in1 	supply	supply	pmos l=32n w=256n
-MP4 out		in2_n nodo2		supply	pmos l=32n w=256n
-MN1 out		in2_n	nodo3		ground	nmos l=32n w=128n
+MP4 out		in2_n 	nodo2	supply	pmos l=32n w=256n
+MN1 out		in2_n	nodo3	ground	nmos l=32n w=128n
 MN2 nodo3	in1_n	ground	ground	nmos l=32n w=128n
-MN3 out		in2	nodo4		ground	nmos l=32n w=128n
-MN4 nodo4	in1	ground	ground	nmos l=32n w=128n
+MN3 out		in2		nodo4	ground	nmos l=32n w=128n
+MN4 nodo4	in1		ground	ground	nmos l=32n w=128n
 .ends XOR2
+
 
 * NAND de 2 bits (necessária para a AND):
 
 .SUBCKT NAND2 in1 in2 out supply ground
-MP1 out		in1 supply	supply	pmos l=32n w=64n
-MP2 out		in2 supply	supply	pmos l=32n w=64n
+MP1 out		in1 supply	supply	pmos l=32n w=128n
+MP2 out		in2 supply	supply	pmos l=32n w=128n
 MN1 out		in1 nodo1	ground	nmos l=32n w=128n
 MN2 nodo1	in2 ground	ground	nmos l=32n w=128n
 .ends NAND2
