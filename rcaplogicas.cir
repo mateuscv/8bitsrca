@@ -57,7 +57,7 @@ Xnor1 in1 in2 nodo1 supply ground NOR2
 Xinv1 nodo1 out supply ground INV
 .ends OR2
 
-* Full adder
+* Full Adder
 
 .SUBCKT FA cin in1 in2 cout soma supply ground
 Xxor1 in1             in2       in1xorin2       supply ground XOR2

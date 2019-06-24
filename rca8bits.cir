@@ -4,9 +4,9 @@
 
 * INCLUSÃO DOS SUBCIRCUITOS (Full adder):
 
-.include 8bitrcasubckts.cir
+.include rcaplogicas.cir
 
-* DESCRIÇÃO DO CIRCUITO
+* DESCRIÇÃO DO CIRCUITO:
 
 Vvdd fonte gnd 0.9V
 Xfulladder1 0     a0 b0 cout1 sum1 fonte gnd FA
@@ -18,19 +18,16 @@ Xfulladder6 cout5 a5 b5 cout6 sum6 fonte gnd FA
 Xfulladder7 cout6 a6 b6 cout7 sum7 fonte gnd FA
 Xfulladder8 cout7 a7 b7 cout8 sum8 fonte gnd FA
 
+* SIMULAÇÕES E ANÁLISES:
+
 *Va1 a0 0 PULSE (0 0.9 0 0 0 1n 2n)
 *Vb1 b0 0 PULSE (0 0.9 0 0 0 2n 4n)
 *Va2 a1 0 PULSE (0 0.9 0 0 0 4n 8n)
 *Vb2 b1 0 PULSE (0 0.9 0 0 0 8n 16n)
 
-Vb0 b0 gnd 0.9
-Vb1 b1 gnd 0.9
-Vb2 b2 gnd 0.9
-Vb3 b3 gnd 0.9
-Vb4 b4 gnd 0.9
-Vb5 b5 gnd 0.9
-Vb6 b6 gnd 0.9
-Vb7 b7 gnd 0.9
+*gnuplot verdade cout1 a1+1 b1+2 sum2+3 cout2+4
+*gnuplot lenta soma8 cout8+1
+*gnuplot plotfinal a0 cout8+1
 
 Va0 a0 gnd pwl(0n 0 1n 0 1.01n 0.9)
 Va1 a1 gnd 0.9
@@ -41,7 +38,16 @@ Va5 a5 gnd 0.9
 Va6 a6 gnd 0.9
 Va7 a7 gnd 0.9
 
-.measure tran critico trig v(a0) val=0.45 rise=1 targ v(cout8) val=0.45 rise=1
-.tran 0.7p 6n
+Vb0 b0 gnd 0.9
+Vb1 b1 gnd 0.0
+Vb2 b2 gnd 0.0
+Vb3 b3 gnd 0.0
+Vb4 b4 gnd 0.0
+Vb5 b5 gnd 0.0
+Vb6 b6 gnd 0.0
+Vb7 b7 gnd 0.0
 
+.measure tran critico trig v(a0) val=0.45 rise=1 targ v(cout8) val=0.45 rise=1
+.tran 2p 4n
+*16n
 .end
