@@ -1,6 +1,4 @@
 *     RIPPLE CARRY ADDER DE 8-BITS
-* SISTEMAS DIGITAIS -- PROF. PAULO BUTZEN 
-*  MATEUS CAPPELLARI VIEIRA / Mat. 116514
 
 * INCLUSÃO DOS SUBCIRCUITOS (Full adder):
 
@@ -20,13 +18,13 @@ Xfulladder8 cout7 a7 b7 cout8 sum8 fonte gnd FA
 
 * SIMULAÇÕES E ANÁLISES:
 
-*Va1 a0 0 PULSE (0 0.9 0 0 0 1n 2n)
-*Vb1 b0 0 PULSE (0 0.9 0 0 0 2n 4n)
-*Va2 a1 0 PULSE (0 0.9 0 0 0 4n 8n)
-*Vb2 b1 0 PULSE (0 0.9 0 0 0 8n 16n)
+*Va0 a0 0 PULSE (0 0.9 0 0 0 1n 2n)
+*Vb0 b0 0 PULSE (0 0.9 0 0 0 2n 4n)
+*Va1 a1 0 PULSE (0 0.9 0 0 0 4n 8n)
+*Vb1 b1 0 PULSE (0 0.9 0 0 0 8n 16n)
 
 *gnuplot verdade cout1 a1+1 b1+2 sum2+3 cout2+4
-*gnuplot lenta soma8 cout8+1
+*gnuplot lenta sum8 cout8+1
 *gnuplot plotfinal a0 cout8+1
 
 Va0 a0 gnd pwl(0n 0 1n 0 1.01n 0.9)
